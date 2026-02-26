@@ -108,8 +108,8 @@ body {
     margin: 0;
 }
 .curso-badge {
-    background: white;
-    color: var(--color-principal);
+    background:#777BB4;
+    color:white;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -291,18 +291,92 @@ body {
         margin-top: 5px;
     }
 }
+.tarjeta-tema{
+    cursor: default !important;      
+    transform: none !important;      
+    transition: none !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+    border: 1px solid #f0f0f0 !important; 
+}
+.tarjeta-tema:hover{
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+    border-color: #f0f0f0 !important;
+}
+.nombre-tema{
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    text-align:center;
+}
+.lista-ejercicios{
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.lista-ejercicios li{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.lista-ejercicios a{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    background-color: #f8fafc;  
+    border: 1px solid #e2e8f0;  
+    border-radius: 8px;         
+    padding: 10px 14px;         
+    margin-bottom: 8px;        
+    width: 90%;
+    
+    text-decoration: none !important;
+    color: #475569;            
+    font-size: 0.9rem;
+    font-weight: 500;
+    
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-left:5%;
+}
+.lista-ejercicios a:hover{
+    background-color: #ffffff;  
+    border-color: #777BB4;     
+    color: #777BB4;            
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(119, 123, 180, 0.15);
+}
+.lista-ejercicios i{
+    color: #777BB4;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.lista-ejercicios a:hover i{
+    transform: scale(1.1);
+}
+.sin-enlace{
+    display: block;
+    color: #94a3b8;
+    padding: 8px;
+    font-size: 0.85rem;
+    font-style: italic;
+    border: 1px dashed #e2e8f0;
+    border-radius: 8px;
+}
 /* --- GRID --- */
 .rejilla-tarjetas {
     display: grid;
-    position:absolute;
-    left:50%;
-    transform:translate(-50%);
-    grid-template-columns: repeat(6, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 1.5rem;
 }
 /* --- TARJETAS INTERACTIVAS --- */
 .tarjeta {
-    height:8vh;
+    height:300px;
     background: var(--color-blanco);
     border-radius: var(--borde-radio);
     overflow: hidden;
@@ -320,6 +394,35 @@ body {
         top:75%;
         left:50%;
         transform:translate(-50%);
+    }
+}
+.tarjeta:nth-child(5){
+    position:relative;
+    left:50%;
+    bottom:0;
+}
+.tarjeta:nth-child(6){
+    position:relative;
+    left:50%;
+    bottom:0;
+}
+.tarjeta:nth-child(7){
+    position:relative;
+    left:50%;
+    bottom:0;
+}
+@media(width > 777px and width < 1031px){
+    .tarjeta:nth-chid(n+5){
+        position:static;
+    }
+    .tarjeta:nth-child(7){
+        position:relative;
+        left:100%;
+    }
+}
+@media(width > 1031px){
+    .tarjeta:nth-child(n+5){
+        position:relative;
     }
 }
 .tarjetaSola{
@@ -352,7 +455,7 @@ body {
     border-color: var(--color-principal); 
 }
 .tarjeta-imagen {
-    height: 30px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
